@@ -1,0 +1,28 @@
+@startuml
+
+package model {
+
+class Element {
+  boolean actorCollision(SimpleGame m)
+}
+class Actor extends Element
+class Food extends Element
+class Obstacle extends Element
+
+class SimpleGame
+
+SimpleGame o- "actor" Position
+
+SimpleGame o-- "*" Element
+
+interface ModelListener {
+    update(int x, int y, Element e)
+}
+
+SimpleGame o-- "1" ModelListener
+}
+
+package view {
+    class ViewModelListener implements ModelListener
+}
+@enduml

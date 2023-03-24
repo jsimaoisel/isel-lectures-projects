@@ -1,0 +1,1 @@
+gcloud functions deploy cfpubsub-firestore --region=europe-west1  --entry-point=functionpubsub.Entrypoint --runtime=java11 --trigger-topic cf-pubsub-firestore --source=target/deployment --service-account=la-account-firestore@cn2122-jsla-geral.iam.gserviceaccount.com

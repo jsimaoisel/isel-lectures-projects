@@ -1,0 +1,1 @@
+gcloud functions deploy cfhttp-computevms --region=europe-west1 --allow-unauthenticated --entry-point=functionhttp.Entrypoint --runtime=java11 --trigger-http --source=target/deployment --service-account=la-compute-allpermissions@cn2122-jsla-geral.iam.gserviceaccount.com

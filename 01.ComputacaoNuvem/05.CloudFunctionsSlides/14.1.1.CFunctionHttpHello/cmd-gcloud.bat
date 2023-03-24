@@ -1,0 +1,1 @@
+gcloud functions deploy cfhttp-hello --region=europe-west1 --allow-unauthenticated --entry-point=functionhttp.Entrypoint --runtime=java11 --trigger-http --source=target/deployment

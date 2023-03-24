@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// each class is defined in each own file, inside a common package
+option java_multiple_files = true;
+option java_package = "servicecontract";
+
+package fileuploadservice; // package do proto
+
+service FileUploadService {
+  rpc test(TestString) returns (TestString);
+  rpc SendFileBlocks(stream Contents) returns (Result);
+  //rpc getLabels()
+}
+message TestString {
+  string str = 1;
+}
+message Contents {
+  bytes fileBlockBytes = 1; // bytes type is an array of bytes
+  string filename = 2;
+  string contentType = 3;
+}
+message Result {
+  int32 numBlocksReceived = 1;
+  string hashId = 2; // Hash from storage Blob gsutil uri
+}
+
+
